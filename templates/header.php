@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,13 +19,21 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Completed Tasks</a>
-    </ul>
-    <button type="button" class="btn btn-light">Sign In</button>
+    <?php 
+      if(isset($_SESSION['user_id'])) {
+        echo 
+        '<ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Completed Tasks</a>
+        </ul>';
+        echo '<a href="signout.php" class="btn btn-light">Sign Out</a>';
+      }
+      else {
+        echo '<a href="index.php" class="btn btn-light ml-auto">Sign In</a>';
+      }
+    ?>
   </div>
 </nav>

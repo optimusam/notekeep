@@ -1,0 +1,12 @@
+user
+---------
+CREATE TABLE `notekeep`.`user` ( `id` INT UNSIGNED NOT NULL AUTO_INCREMENT , `name` VARCHAR(50) NOT NULL , `email` VARCHAR(50) NOT NULL , `password` VARCHAR(200) NOT NULL , `gender` VARCHAR(10) NOT NULL , PRIMARY KEY (`id`), UNIQUE (`email`)) ENGINE = InnoDB;
+
+
+id (p.k.) | Name | Email | Password 
+
+
+todos
+---------
+
+id (p.k) | user_id (f.k.) | content 
