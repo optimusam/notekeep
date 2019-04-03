@@ -21,6 +21,7 @@ h3 {
 }
 
 .check {
+  color: blue;
   float: right;
   cursor: pointer;
 }
