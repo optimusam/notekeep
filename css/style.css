@@ -2,6 +2,7 @@ body{
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -11,7 +12,9 @@ body{
 .footer {
   flex-shrink: 0;
 }
-
+ul > li {
+  margin: 10px;
+}
 .form > * {
   margin: 10px;
 }
@@ -21,7 +24,11 @@ h3 {
 }
 
 .check {
-  color: blue;
   float: right;
+  cursor: pointer;
+}
+
+.del {
+  float: left;
   cursor: pointer;
 }

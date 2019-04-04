@@ -1,6 +1,6 @@
 <footer class="footer mt-auto py-3 text-center">
   <div class="container">
-    <span class="text-muted">&copy; 2019</span>
+    <span class="text-muted">&copy;Sameer Giri 2019</span>
   </div>
 </footer>
 

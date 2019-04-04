@@ -4,8 +4,7 @@
   <div class="container text-center">
     <form action="addtodo.php" method="POST">
         <div class="form-group">
-        <label for="addtodo">Add Todo</label>
-        <textarea class="form-control" name="content" id="addtodo" rows="1"></textarea>
+        <textarea class="form-control" name="content" placeholder="Your Todo" rows="1" required></textarea>
         </div>
         <input type="submit" value="Add">  
     </form>
@@ -22,8 +21,11 @@
             $post .= '
             <li class="list-group-item">'
             . $row['content'].
-            '<form method="POST" action="todocompleted.php">
-            <button class="check" name='. $row['id'] .'><i class="fas fa-check"></i></button>
+            '<form method="POST" action="tododelete.php">
+            <button class="del btn btn-danger" name='. $row['id'] .'><i class="fas fa-trash"></i></button>
+            </form>
+            <form method="POST" action="todocompleted.php">
+            <button class="check btn btn-info" name='. $row['id'] .'><i class="fas fa-check"></i></button>
             </form>
             </li>';
         }
