@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  <style>
+    body {
+      background: url('bg.jpg');
+    }
+    h1 {
+      color: white;
+    }
+    .contain {
+      width: 40%;
+      margin: 0 auto;
+    }
+  </style>
   <?php include('templates/header.php'); ?>
-  <div class="container text-center">
+  <div class="contain text-center">
 
-  <form class="form form-signin" method="POST" action="signup.php">
+  <form class="form form-signin" method="POST" action="signup.php" onsubmit="return validate();">
   <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
   <label for="inputName" class="sr-only">Name</label>
   <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required>
@@ -15,5 +26,25 @@
   <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
   </form>
   </div>
+  <script>
+    function validate() {
+    var x = document.querySelector("#inputName").value;
+    var b = document.querySelector("#inputEmail").value;
+    var p = document.querySelector("#inputPassword").value;
+    if (x == "") {
+    alert("Name must be filled.");
+     return false;
+    }
+    if (b == "") {
+    alert("Email ID must be filled.");
+    return false;
+    }
+    if (p == "") {
+    alert("Password must be filled.");
+    return false;
+    }
+    return true;
+  }
+  </script>
   <?php include('templates/footer.php'); ?>
 </html>

@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    body {
+      background: url('bg.jpg');
+    }
+    h1 {
+      color: white;
+    }
+    .contain {
+      width: 40%;
+      margin: 0 auto;
+    }
+  </style>
   <?php include('templates/header.php');
     if(isset($_SESSION['user_id'])) {
       header('Location: home.php');
     }
   ?>
-  <div class="container text-center">
+  <div class="contain text-center">
 
   <form class="form form-signin" method="POST" action="signin.php">
   <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
